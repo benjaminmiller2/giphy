@@ -1,5 +1,34 @@
+.js-button-box{
+  width: 960px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.buttons{
+  width: 100px;
+  height: 35px;
+  color: white;
+  background-color: black;
+  text-align: center;
+
+}
+.js-gif-box{
+  display: flex;
+  flex-wrap: wrap;
+  width: 960px;
+}
+
 .js-gif{
   height: 200px;
   width: 200px;
   border: 1px solid black;
+}
+
+.gifBox{
+  height: 250px;
+  width: 250px;
+}
+.imgBox{
+  width: 100%;
+  height: 100%;
 }
