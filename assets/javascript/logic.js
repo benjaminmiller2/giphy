@@ -60,10 +60,20 @@ console.log(results);
 });
 };
 
+function search(){
+event.preventDefault();
+
+let userInput = $(".js-input").val().trim();
+topics.push(userInput);
+$(".js-button-box").empty();
+generateButtons();
+};
+
 generateButtons();
 
 //Attatches a click function to the buttons. Needs to be set to "document" in order to function on all 
 //loop-generated buttons
 $(document).on("click", "#show", display);
+$(".js-submit").on("click", search);
 
 })
