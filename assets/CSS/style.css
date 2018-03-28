@@ -1,5 +1,14 @@
+body{
+  background-color: whitesmoke
+}
+.banner{
+  height: 200px;
+  width: 100%;
+  background-image: url("../images/parks.jpg");
+  background-size: cover;
+}
 .js-button-box{
-  width: 960px;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -13,19 +22,16 @@
   background-color: black;
   text-align: center;
   margin: 10px;
-  
 }
 .container{
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
 }
 .js-gif-box{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 700px;
-  border: 1px solid black;
+  width: 900px;
 }
 .gifBox{
   height: 200px;
@@ -37,8 +43,13 @@
   height: 100%;
 }
 .js-search-box{
-  border:1px solid black;
-  width: 400px;
+  width: 200px;
+  height: 100%;
+  background-color: beige;
+  border: 1px solid black
+}
+.js-input{
+  width: 100px; 
 }
 .margin{
   margin-left: 25px;

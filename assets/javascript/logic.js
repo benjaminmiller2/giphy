@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 //Creates global variables
-let topics = ["firefly", "buffy", "the next generation", "deep space nine", "battlestar galactica", "babylon 5", "farscape"]
+let topics = ["Leslie Knope", "Ron Swanson", "Tom Haverford", "Andy Dwyer", "April Ludgate", "Jerry Gergich", "Donna Meagle", "Ben Wyatt", "Chris Traeger"]
 let results;
 let imgURL;
 let gifURL;
@@ -38,7 +38,7 @@ function display(){
         console.log(searchItem);
 
             //Assigns the API query to a variable
-            let queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Xf0hnGeWnHIBhnq3lXRZSAj470HT1XbM&q=" + searchItem + "&limit=15&offset=0&rating=&lang=en"
+            let queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Xf0hnGeWnHIBhnq3lXRZSAj470HT1XbM&q=" + searchItem + "&limit=16&offset=0&rating=&lang=en"
 
                 //Calls up data from the API
                 $.ajax({
@@ -59,6 +59,9 @@ function display(){
         
                             //Assigns a gif to a variable
                             gifURL = results[j].images.downsized.url;
+
+                            //Assigns the gif rating to a variable
+                            let rating = results[j].rating;
         
                                 //Creates an html object to hold the image,
                                 //Assigns attributes to the image: source, state markers
@@ -68,16 +71,22 @@ function display(){
                                 img.attr("data-inactive", imgURL);
                                 img.attr("data-active", gifURL);
 
+                                    //Creates a heading tag to display the rating
+                                    let ratingBox = $("<h4>Rating: " + rating + "</h4>");
+                                    
                                     //Creates a div to contain the image
                                     let gifBox = $("<div class='gifBox'>");
-        
+
+                                        //Places the new div to the heading tag
+                                        ratingBox.append(gifBox);
+
                                         //Places the image into the new div
                                         gifBox.append(img);
         
                                             //Places the image div onto its container on the index page
-                                            $(".js-gif-box").append(gifBox);
+                                            $(".js-gif-box").append(ratingBox);
 
-                                            console.log(gifURL);
+                                            console.log(rating);
                         };
 
                 });
